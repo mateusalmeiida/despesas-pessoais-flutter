@@ -17,7 +17,7 @@ class ExpensesApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
 
-  final _transactions = [
+  final List<Transaction> _transactions = [
     Transaction(
         id: 't1', title: 'Fone de ouvido', value: 52.99, date: DateTime.now()),
     Transaction(
