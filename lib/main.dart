@@ -19,19 +19,30 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.green,
-        titleTextStyle: TextStyle(
-          color: Colors.white,
-          fontSize: 22,
+        appBar: AppBar(
+          backgroundColor: Colors.green,
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+          ),
+          title: Text('Despesas Pessoais'),
         ),
-        title: Text('Despesas Pessoais'),
-      ),
-      body: Center(
-          child: Text(
-        'Versão Inicial',
-        style: TextStyle(fontSize: 22),
-      )),
-    );
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              child: Card(
+                elevation: 5,
+                child: Text('Gráfico'),
+              ),
+            ),
+            Container(
+              child: Card(
+                elevation: 5,
+                child: Text('Lista de transações'),
+              ),
+            )
+          ],
+        ));
   }
 }
