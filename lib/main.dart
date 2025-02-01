@@ -23,7 +23,7 @@ class MyHomePage extends StatelessWidget {
     Transaction(
         id: 't2',
         title: 'Internet',
-        value: 100,
+        value: 1000,
         date: DateTime(2025, 1, 31, 10, 20)),
   ];
 
@@ -56,12 +56,30 @@ class MyHomePage extends StatelessWidget {
                         margin:
                             EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.green, width: 2)),
+                            border: Border.all(
+                                color: Colors.green[400]!, width: 2)),
                         padding: EdgeInsets.all(10),
-                        child: Text(tr.value.toString()),
+                        child: Text(
+                          tr.value.toString(),
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.green[400]),
+                        ),
                       ),
                       Column(
-                        children: [Text(tr.title), Text(tr.date.toString())],
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            tr.title,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16),
+                          ),
+                          Text(
+                            tr.date.toString(),
+                            style: TextStyle(color: Colors.grey),
+                          )
+                        ],
                       )
                     ],
                   ),
