@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class TransactionForm extends StatefulWidget {
   final void Function(String, double) onSubmit;
 
-  TransactionForm({required this.onSubmit, super.key});
+  const TransactionForm({required this.onSubmit, super.key});
 
   @override
-  State<TransactionForm> createState() => _TransactionFormState();
+  State<TransactionForm> createState() {
+    return _TransactionFormState();
+  }
 }
 
 class _TransactionFormState extends State<TransactionForm> {
