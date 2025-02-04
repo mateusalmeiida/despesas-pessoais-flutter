@@ -19,8 +19,17 @@ class ExpensesApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: MyHomePage(),
         theme: ThemeData(
+          textTheme: TextTheme(
+              titleSmall: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+          )),
           appBarTheme: AppBarTheme(
-              backgroundColor: Colors.green, foregroundColor: Colors.white),
+              titleTextStyle: TextStyle(
+                fontSize: 18,
+              ),
+              backgroundColor: Colors.green,
+              foregroundColor: Colors.white),
           colorScheme: ColorScheme.fromSeed(
             seedColor: Colors.white,
             primary: Colors.green,
@@ -83,9 +92,6 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: Icon(Icons.add),
           )
         ],
-        titleTextStyle: TextStyle(
-          fontSize: 22,
-        ),
         title: Text('Despesas Pessoais'),
       ),
       body: SingleChildScrollView(
