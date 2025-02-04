@@ -15,7 +15,18 @@ class ExpensesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: MyHomePage());
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MyHomePage(),
+        theme: ThemeData(
+          appBarTheme: AppBarTheme(
+              backgroundColor: Colors.green, foregroundColor: Colors.white),
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.white,
+            primary: Colors.green,
+            onPrimary: Colors.white,
+          ),
+        ));
   }
 }
 
@@ -64,18 +75,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
         actions: [
           IconButton(
             onPressed: () {
               _openTransactionFormModal(context);
             },
-            icon: Icon(Icons.add_circle_outline),
-            color: Colors.white,
+            icon: Icon(Icons.add),
           )
         ],
         titleTextStyle: TextStyle(
-          color: Colors.white,
           fontSize: 22,
         ),
         title: Text('Despesas Pessoais'),
@@ -97,11 +105,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Theme.of(context).primaryColor,
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
         onPressed: () {
           _openTransactionFormModal(context);
         },
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.green[400],
         child: Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
