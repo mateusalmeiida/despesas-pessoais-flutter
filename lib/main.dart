@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:despesas/components/chart.dart';
 import 'package:despesas/components/transaction_form.dart';
 import 'package:despesas/models/transaction.dart';
 import 'package:flutter/material.dart';
@@ -110,15 +111,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Card(
-              elevation: 5,
-              child: Text('Gráfico'),
-            ),
-            Column(
-              children: [
-                TransactionList(transactions: _transactions),
-              ],
-            ),
+            Chart(recentTransactions: _recentTransactions),
+            TransactionList(transactions: _transactions),
           ],
         ),
       ),
