@@ -12,7 +12,7 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 410,
+      height: 430,
       child: transactions.isNotEmpty
           ? ListView.builder(
               itemCount: transactions.length,
