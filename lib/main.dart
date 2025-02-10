@@ -23,11 +23,12 @@ class ExpensesApp extends StatelessWidget {
           textTheme: TextTheme(
               titleSmall: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 16,
+            fontSize: MediaQuery.of(context).textScaler.scale(16),
           )),
           appBarTheme: AppBarTheme(
               titleTextStyle: TextStyle(
-                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                fontSize: MediaQuery.of(context).textScaler.scale(18),
               ),
               backgroundColor: Colors.green,
               foregroundColor: Colors.white),
