@@ -115,10 +115,10 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(
-                height: availableHeight * 0.3,
+                height: availableHeight * 0.25,
                 child: Chart(recentTransactions: _recentTransactions)),
             SizedBox(
-              height: availableHeight * 0.7,
+              height: availableHeight * 0.75,
               child: TransactionList(
                 transactions: _transactions,
                 onRemove: _deleteTransaction,
