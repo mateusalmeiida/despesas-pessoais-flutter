@@ -46,56 +46,59 @@ class _TransactionFormState extends State<TransactionForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 5,
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: ListView(
-          children: [
-            TextField(
-              controller: _titleController,
-              onSubmitted: (_) {
-                _submitForm();
-              },
-              decoration: InputDecoration(labelText: 'Título'),
-            ),
-            TextField(
-              controller: _valueController,
-              keyboardType: TextInputType.numberWithOptions(decimal: true),
-              onSubmitted: (_) {
-                _submitForm();
-              },
-              decoration: InputDecoration(labelText: 'Valor (R\$)'),
-            ),
-            SizedBox(
-              height: 70,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Text(_selectedDate == null
-                        ? 'Nenhuma data selecionada'
-                        : 'Data selecionada: ${DateFormat('dd/MM/y').format(_selectedDate!)}'),
-                  ),
-                  TextButton(
-                    onPressed: _showDatePicker,
-                    child: Text(
-                      'Selecionar data',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  )
-                ],
+    return SingleChildScrollView(
+      child: Card(
+        elevation: 5,
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(
+              10, 10, 10, 10 + MediaQuery.of(context).viewInsets.bottom),
+          child: Column(
+            children: [
+              TextField(
+                controller: _titleController,
+                onSubmitted: (_) {
+                  _submitForm();
+                },
+                decoration: InputDecoration(labelText: 'Título'),
               ),
-            ),
-            ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(Colors.green),
-                    foregroundColor: WidgetStatePropertyAll(Colors.white)),
-                onPressed: _submitForm,
-                child: Text(
-                  'Nova transação',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                ))
-          ],
+              TextField(
+                controller: _valueController,
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                onSubmitted: (_) {
+                  _submitForm();
+                },
+                decoration: InputDecoration(labelText: 'Valor (R\$)'),
+              ),
+              SizedBox(
+                height: 70,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text(_selectedDate == null
+                          ? 'Nenhuma data selecionada'
+                          : 'Data selecionada: ${DateFormat('dd/MM/y').format(_selectedDate!)}'),
+                    ),
+                    TextButton(
+                      onPressed: _showDatePicker,
+                      child: Text(
+                        'Selecionar data',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor: WidgetStatePropertyAll(Colors.green),
+                      foregroundColor: WidgetStatePropertyAll(Colors.white)),
+                  onPressed: _submitForm,
+                  child: Text(
+                    'Nova transação',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  ))
+            ],
+          ),
         ),
       ),
     );
