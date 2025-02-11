@@ -46,26 +46,28 @@ class TransactionList extends StatelessWidget {
               );
             },
           )
-        : Column(
-            children: [
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                'Nenhuma Transação Cadastrada!',
-                style: Theme.of(context).textTheme.titleSmall,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              SizedBox(
-                height: 200,
-                child: Image.asset(
-                  'assets/images/waiting.png',
-                  fit: BoxFit.cover,
+        : ListView(children: [
+            Column(
+              children: [
+                SizedBox(
+                  height: 20,
                 ),
-              )
-            ],
-          );
+                Text(
+                  'Nenhuma Transação Cadastrada!',
+                  style: Theme.of(context).textTheme.titleSmall,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                  height: 200,
+                  child: Image.asset(
+                    'assets/images/waiting.png',
+                    fit: BoxFit.cover,
+                  ),
+                )
+              ],
+            ),
+          ]);
   }
 }
